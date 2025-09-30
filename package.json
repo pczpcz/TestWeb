@@ -10,9 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@google/model-viewer": "^1.11.0",
     "@supabase/supabase-js": "^2.58.0",
+    "opencascade.js": "^2.0.0-beta.b5ff984",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "vite-plugin-top-level-await": "^1.6.0",
+    "vite-plugin-wasm": "^3.5.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
