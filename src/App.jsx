@@ -18,7 +18,7 @@ const sphere = new oc.BRepPrimAPI_MakeSphere_5(new oc.gp_Pnt_3(0.5, 0.5, 0.5), 5
 const modelUrl = visualizeShapes(oc, sphere.Shape());
 
 import { createClient } from "@supabase/supabase-js";
-//const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY);
+const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY);
 
 function App() {
   const [accounts, setAccounts] = useState([]);
@@ -36,19 +36,19 @@ function App() {
     }
   }
 
-  //useEffect(() => { getAccounts(); }, []);
+  useEffect(() => { getAccounts(); }, []);
 
   return (
-    <><model-viewer src={modelUrl} camera-controls enable-pan /></>
-      
-      //<div>
-
-        //<ul>
-        //  {accounts.map((item) => (
-        //    <li key={item.name}>{item.name}</li>
-       //   ))}
-       // </ul>
-      //</div>
+    <>
+      <model-viewer src={modelUrl} camera-controls enable-pan />
+      <div>
+        <ul>
+          {accounts.map((item) => (
+            <li key={item.name}>{item.name}</li>
+          ))}
+        </ul>
+      </div>
+    </>
   );
 }
 
